@@ -1,0 +1,21 @@
+<div class="container">
+    <!-- <div class="switch-container">
+      <button class="switch-button" (click)="toggleMode()">
+        {{ isLoginMode ? "Register" : "Login" }}
+      </button>
+    </div> -->
+  
+    <div class="form-container">
+      <h2>{{ isLoginMode ? "Login" : "Register" }}</h2>
+  
+      <form *ngIf="isLoginMode; else registerForm">
+        <!-- Login Form HTML -->
+        <app-login (toggleMode)="toggleMode()"></app-login>
+      </form>
+  
+      <ng-template #registerForm>
+        <app-register (toggleMode)="toggleMode()"></app-register>
+      </ng-template>
+    </div>
+  </div>
+  
